@@ -1,6 +1,11 @@
 # Django settings for workshopvenues project.
 
 import os
+try:
+    import keys
+except ImportError:
+    import keys_sample as keys
+    print ("WARNING YOU'RE USING keys_sample.py. Define your keys.py file in production.")
 from django.core.exceptions import ImproperlyConfigured
 
 def get_env_variable(var_name):
@@ -174,6 +179,8 @@ LOGGING = {
         },
     }
 }
+
+SECRET_KEY = keys.SECRET_KEY
 
 # Amazon S3 settings
 

@@ -8,3 +8,5 @@ env.sh
 .coverage
 venv
 venev
+.DS_Store
+keys.py
